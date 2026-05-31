@@ -15,11 +15,12 @@
       <p>דף זה משמש לפיתוח בלבד. הוויג׳ט יופיע בפינה.</p>
     </div>
     <script>
+      // Local dev only (npm run dev). Point these at your SUGAR360 staging origin to test.
       window.INSIGHT_CHAT = {
-        chatEndpoint: 'https://wordpress-984900-6376158.cloudwaysapps.com/wp-json/mwai-ui/v1/chats/submit',
-        apiBase:      'https://wordpress-984900-6376158.cloudwaysapps.com/wp-json/insight-chat/v1',
+        chatEndpoint: 'https://STAGING_HOST/wp-json/mwai-ui/v1/chats/submit',
+        apiBase:      'https://STAGING_HOST/wp-json/insight-chat/v1',
         nonce:        '',
-        siteUrl:      'https://wordpress-984900-6376158.cloudwaysapps.com',
+        siteUrl:      'https://STAGING_HOST',
         defaultLang:  'he',
         botId:        'default',
       };
