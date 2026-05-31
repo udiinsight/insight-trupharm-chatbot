@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insight Chat — dev</title>
+    <style>
+      body { margin: 0; font-family: system-ui; background: #f1f5f9; padding: 2rem; }
+      .demo-page { max-width: 720px; margin: 0 auto; background: white; padding: 2rem; border-radius: 12px; }
+    </style>
+  </head>
+  <body>
+    <div class="demo-page">
+      <h1>Insight Chat dev page</h1>
+      <p>דף זה משמש לפיתוח בלבד. הוויג׳ט יופיע בפינה.</p>
+    </div>
+    <script>
+      window.INSIGHT_CHAT = {
+        chatEndpoint: 'https://wordpress-984900-6376158.cloudwaysapps.com/wp-json/mwai-ui/v1/chats/submit',
+        apiBase:      'https://wordpress-984900-6376158.cloudwaysapps.com/wp-json/insight-chat/v1',
+        nonce:        '',
+        siteUrl:      'https://wordpress-984900-6376158.cloudwaysapps.com',
+        defaultLang:  'he',
+        botId:        'default',
+      };
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

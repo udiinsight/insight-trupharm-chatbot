@@ -1,0 +1,38 @@
+{
+  "he": [
+    {
+      "label": "מה זה SUGAR360 ואיך החיישן עובד?",
+      "prompt": "מה זה SUGAR360 ואיך מערכת הניטור הרציף של הסוכר עובדת?"
+    },
+    {
+      "label": "איך מתקינים ומפעילים את החיישן?",
+      "prompt": "איך מתקינים ומפעילים את חיישן SUGAR360 ומחברים אותו לאפליקציה?"
+    },
+    {
+      "label": "כמה זמן החיישן מחזיק ומה הדיוק?",
+      "prompt": "כמה זמן חיישן SUGAR360 מחזיק ומה רמת הדיוק שלו?"
+    },
+    {
+      "label": "איך מזמינים או יוצרים קשר?",
+      "prompt": "איך אפשר להזמין SUGAR360 או ליצור קשר עם שירות הלקוחות?"
+    }
+  ],
+  "en": [
+    {
+      "label": "What is SUGAR360 and how does the sensor work?",
+      "prompt": "What is SUGAR360 and how does the continuous glucose monitoring system work?"
+    },
+    {
+      "label": "How do I apply and activate the sensor?",
+      "prompt": "How do I apply and activate the SUGAR360 sensor and pair it with the app?"
+    },
+    {
+      "label": "How long does the sensor last and how accurate is it?",
+      "prompt": "How long does a SUGAR360 sensor last and how accurate is it?"
+    },
+    {
+      "label": "How do I order or contact support?",
+      "prompt": "How can I order SUGAR360 or contact customer support?"
+    }
+  ]
+}

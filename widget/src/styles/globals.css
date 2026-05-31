@@ -1,0 +1,104 @@
+/* Font stack is defined in tailwind.config.js (Hebrew-friendly: Heebo / Assistant / system).
+   No custom @font-face is bundled, so the host site's fonts and system fallbacks apply.
+   To use the SUGAR360 brand font, add an @font-face here pointing to the client's font files. */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The widget root is a portal-like top-level node. We isolate font-size and box-sizing
+   without affecting the host site. All Tailwind utilities are already scoped via
+   `important: '#insight-chat-root'` in tailwind.config.js. */
+#insight-chat-root {
+  font-family: theme('fontFamily.sans');
+  font-size: 15px;
+  line-height: 1.55;
+  color: theme('colors.ink.900');
+}
+
+/* Scoped reset. Tailwind preflight is disabled (corePlugins in tailwind.config.js)
+   because it emits unscoped global selectors that restyle the host page. These
+   rules give the widget the same baseline, confined to its own root. Only the
+   elements the widget actually renders are covered. */
+#insight-chat-root,
+#insight-chat-root *,
+#insight-chat-root ::before,
+#insight-chat-root ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+#insight-chat-root button,
+#insight-chat-root textarea {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+#insight-chat-root button {
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+#insight-chat-root button:disabled {
+  cursor: default;
+}
+
+#insight-chat-root textarea {
+  resize: vertical;
+}
+
+#insight-chat-root a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+#insight-chat-root ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#insight-chat-root img,
+#insight-chat-root svg {
+  display: block;
+  vertical-align: middle;
+}
+
+#insight-chat-root img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth out scrollbars inside the chat panel without leaking to the rest of the page. */
+#insight-chat-root .ic-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.ink.200') transparent;
+}
+#insight-chat-root .ic-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+#insight-chat-root .ic-scroll::-webkit-scrollbar-thumb {
+  background-color: theme('colors.ink.200');
+  border-radius: 999px;
+}
+#insight-chat-root .ic-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Hide the page beneath when full-screen on small devices to prevent body scroll. */
+body.insight-chat-modal-open {
+  overflow: hidden;
+}
+
+/* Per-product type/weight tweaks (override Tailwind defaults inside the widget root).
+   line-height: 1.5 (unitless) keeps proportional spacing for the new larger sizes —
+   without it, Tailwind's hard-coded line-heights would clip the text. */
+#insight-chat-root .text-sm     { font-size: 1.2rem; line-height: 1.5; }
+#insight-chat-root .text-xs     { font-size: 1.1rem; line-height: 1.5; }
+#insight-chat-root .font-semibold { font-weight: 500; }
