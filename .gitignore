@@ -35,3 +35,7 @@ insight-keys.json
 # Lint outputs
 .phpunit.result.cache
 .phpcs-cache
+
+# Test / browser artifacts
+.playwright-mcp/
+/*.png
