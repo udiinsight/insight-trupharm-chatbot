@@ -1,0 +1,306 @@
+- generic [active] [ref=e1]:
+  - link "דלג לתוכן הראשי" [ref=e2] [cursor=pointer]:
+    - /url: "#brx-content"
+  - link "דלג לכותרת התחתונה" [ref=e3] [cursor=pointer]:
+    - /url: "#brx-footer"
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - link "Sugar360" [ref=e8] [cursor=pointer]:
+        - /url: https://wordpress-984900-6410677.cloudwaysapps.com
+        - img "Sugar360" [ref=e9]
+      - navigation [ref=e12]:
+        - list [ref=e13]:
+          - listitem [ref=e14]:
+            - link "חיישן GS1" [ref=e15] [cursor=pointer]:
+              - /url: https://wordpress-984900-6410677.cloudwaysapps.com/product/sibionics-gs1/
+          - listitem [ref=e16]:
+            - link "אודות" [ref=e17] [cursor=pointer]:
+              - /url: https://wordpress-984900-6410677.cloudwaysapps.com/about/
+          - listitem [ref=e18]:
+            - link "שירות לקוחות" [ref=e19] [cursor=pointer]:
+              - /url: https://wordpress-984900-6410677.cloudwaysapps.com/customer-service/
+      - generic [ref=e20]:
+        - link [ref=e21] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/my-account/
+          - img [ref=e22]
+        - link "צפה בעגלה" [ref=e26] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/cart/
+          - img [ref=e28]
+        - link "לרכישה" [ref=e30] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/product/sibionics-gs1/
+  - main [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - paragraph [ref=e35]:
+          - strong [ref=e36]: חדש בישראל
+          - text: – חיישן סוכרת מבית תרופארם
+        - heading "שליטה חכמה ברמות הסוכר בזמן אמת" [level=1] [ref=e37]:
+          - text: שליטה חכמה ברמות
+          - text: הסוכר בזמן אמת
+        - paragraph [ref=e39]: חיישן GS1 של חברת SIBIONICS לניטור סוכר רציף ומדוייק עם התראות בזמן אמת ובטיחות גבוהה יותר. ניהול סוכרת ומעקב גליקמי במצבים מטבוליים שונים.
+        - generic [ref=e40]:
+          - link "לרכישה »" [ref=e41] [cursor=pointer]:
+            - /url: https://wordpress-984900-6410677.cloudwaysapps.com/product/sibionics-gs1/
+          - link "גלו עוד »" [ref=e42] [cursor=pointer]:
+            - /url: "#discover"
+      - generic [ref=e43]: 14 ימי שימוש רציף | MARD 8.7% | עמידות במים IP28 | התראות בזמן אמת
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - heading "למי מתאים חיישן לניטור סוכר רציף?" [level=2] [ref=e46]
+        - generic [ref=e47]: חיישן ניטור הסוכר הרציף מיועדת לאנשים מגיל 3 ומעלה המעוניינים במעקב מדויק לאורך זמן, ולצוותים רפואיים הנדרשים לתמונה רציפה וברורה של נתוני המטופל. היא מתאימה למצבים רפואיים שונים, משלב האבחון ועד לניהול יומיומי ארוך טווח.
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - heading "למי שמנהלים סוכרת באופן יומיומי" [level=3] [ref=e51]:
+            - text: למי שמנהלים סוכרת
+            - text: באופן יומיומי
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - text: אנשים עם
+              - strong [ref=e55]: סוכרת סוג 1
+              - text: או
+              - strong [ref=e56]: סוג 2
+            - listitem [ref=e57]:
+              - text: נשים עם
+              - strong [ref=e58]: סוכרת הריון
+            - listitem [ref=e59]: מטופלים הזקוקים לניטור צמוד לצורך התאמת טיפול
+        - generic [ref=e60]:
+          - heading "למי שזקוקים לבטיחות ומעקב צמוד" [level=3] [ref=e62]:
+            - text: למי שזקוקים לבטיחות
+            - text: ומעקב צמוד
+          - list [ref=e64]:
+            - listitem [ref=e65]: אנשים שאינם חשים בירידות סוכר
+            - listitem [ref=e66]: הורים לילדים מגיל 3 עם סוכרת
+            - listitem [ref=e67]: מבוגרים הזקוקים למעקב יציב ואמין
+        - generic [ref=e68]:
+          - heading "למי שמעוניינים במניעה ואיזון מוקדם" [level=3] [ref=e70]:
+            - text: למי שמעוניינים במניעה
+            - text: ואיזון מוקדם
+          - list [ref=e72]:
+            - listitem [ref=e73]: מי שמעוניינים להבין כיצד הגוף מגיב למזון ואורח חיים
+            - listitem [ref=e74]: טרום סוכרת
+            - listitem [ref=e75]: תסמונת מטבולית
+        - generic [ref=e76]:
+          - heading "למי שמעוניינים בשיתוף נתונים עם הצוות המטפל" [level=3] [ref=e78]
+          - list [ref=e80]:
+            - listitem [ref=e81]: מאפשר לרופאים ולצוותים קליניים מעקב רציף
+            - listitem [ref=e82]: ניתוח מגמות והתאמת טיפול מבוססת נתונים
+      - link "לרכישה »" [ref=e83] [cursor=pointer]:
+        - /url: https://wordpress-984900-6410677.cloudwaysapps.com/product/sibionics-gs1/
+    - generic [ref=e86]:
+      - heading "השליטה בידיים שלך. דרך האפליקציה" [level=2] [ref=e87]:
+        - text: השליטה בידיים שלך.
+        - text: דרך האפליקציה
+      - generic [ref=e88]:
+        - text: האפליקציה של SIBIONICS מאפשרת צפייה רציפה בנתוני הסוכר בזמן אמת,
+        - text: התראות חכמות, ניתוח מגמות ושיתוף דוחות בקלות.
+        - text: כל הנתונים במקום אחד. בכל רגע.
+      - list [ref=e90]:
+        - listitem [ref=e91]: תצוגת נתונים בזמן אמת
+        - listitem [ref=e92]: התראות על חריגות
+        - listitem [ref=e93]: גרפים ומגמות יומיות ושבועיות
+        - listitem [ref=e94]: שיתוף דוחות עם הצוות המטפל
+    - generic [ref=e98]:
+      - heading "להבין מה קורה בגוף. בכל רגע." [level=2] [ref=e99]
+      - generic [ref=e100]: רמות הסוכר משתנות לאורך היום, גם כשלא מרגישים. ניטור רציף מאפשר לזהות מגמות מוקדם, ולהגיב בזמן.
+      - generic [ref=e101]:
+        - paragraph [ref=e102]: שינויים חדים עלולים להתרחש גם ללא תחושה מוקדמת. חיישן קטן ודיסקרטי הנלבש על הזרוע למשך עד שבועיים, מודד את רמות הסוכר בנוזל הבין תאי ומשדר נתונים בזמן אמת לסמארטפון. בכל רגע נתון מתקבל חלון חי אל תוך הגוף.
+        - paragraph [ref=e103]: במקום להסתמך על בדיקות נקודתיות, מתקבלת תמונה רציפה וברורה של השינויים לאורך היום והלילה. ניטור רציף מאפשר לזהות מגמות מוקדם ולפעול בזמן. כך מתאפשרת שליטה טובה יותר ואיזון מדויק יותר.
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - text: ניטור רציף שמייתר
+          - text: דקירות חוזרות
+          - text: לאורך היום
+        - generic [ref=e106]:
+          - text: התראות בזמן כאשר
+          - text: מתרחשת עלייה או
+          - text: ירידה משמעותית
+        - generic [ref=e107]:
+          - text: כלי שמסייע לאיזון
+          - text: מדויק ויציב יותר של
+          - text: רמות הסוכר
+      - link "לרכישה »" [ref=e108] [cursor=pointer]:
+        - /url: https://wordpress-984900-6410677.cloudwaysapps.com/product/sibionics-gs1/
+    - generic [ref=e109]:
+      - heading "ניסיון בינלאומי. אמון עולמי." [level=2] [ref=e111]
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]: +0M
+          - paragraph [ref=e116]: מטופלים ברחבי העולם
+        - generic [ref=e117]:
+          - generic [ref=e118]: "+0"
+          - paragraph [ref=e120]:
+            - text: מדינות בהן
+            - text: המערכת בשימוש
+        - generic [ref=e121]:
+          - generic [ref=e122]: "+0"
+          - paragraph [ref=e124]: פטנטים חדשים
+        - generic [ref=e125]:
+          - generic [ref=e126]: 0K
+          - paragraph [ref=e128]:
+            - text: סנסורים שנמכרו
+            - text: במערב אירופה בשנת 2025
+    - generic [ref=e129]:
+      - generic [ref=e130]:
+        - heading "היתרונות שעושים את ההבדל" [level=2] [ref=e131]
+        - generic [ref=e132]: חיישן SIBIONICS לניטור סוכר רציף משלב טכנולוגיית rt-CGM מתקדמת, דיוק קליני מוכח ונוחות שימוש יומיומית — כדי לאפשר ניהול בטוח, מדויק ונגיש יותר של רמות הסוכר.
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - img [ref=e135]
+          - heading "טכנולוגיית rt-CGM בזמן אמת" [level=3] [ref=e142]
+          - paragraph [ref=e144]: שידור רציף ואוטומטי של נתונים לאורך כל היום והלילה, עם התראות כאשר מתרחשת עלייה או ירידה משמעותית.
+        - generic [ref=e145]:
+          - img [ref=e146]
+          - heading "מדוייק יותר" [level=3] [ref=e148]
+          - paragraph [ref=e150]: "רמת דיוק גבוה במיוחד: MADR 8.7% טווח מדידה רחב במיוחד: 50 עד 450[Mg/Dl]"
+        - generic [ref=e151]:
+          - img [ref=e152]
+          - heading "סנסור דק במיוחד" [level=3] [ref=e157]
+          - paragraph [ref=e159]: עובי של 3 מ"מ בלבד ומשקל של 3.8 גרם קל, דיסקרטי ונוח במיוחד לשימוש יומיומי. כולל מדבקת חיזוק למניעת תלישה ונפילות.
+        - generic [ref=e160]:
+          - img [ref=e161]
+          - heading "עד 14 ימי שימוש רציף" [level=3] [ref=e171]
+          - paragraph [ref=e173]: מעקב מתמשך לאורך זמן פחות החלפות ופחות התעסקות.
+    - generic [ref=e174]:
+      - heading "נסיון מהשטח" [level=2] [ref=e175]
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - paragraph [ref=e179]: "\"עברתי ל-SIBIONICS אחרי כמה שנים עם חיישן אחר, וההבדל מורגש. ההתראות בזמן אמת נותנות לי ביטחון אמיתי, במיוחד בלילה.\""
+          - paragraph [ref=e181]:
+            - strong [ref=e182]: דני כהן
+            - text: בן 34, מתמודד עם סוכרת סוג 1
+        - generic [ref=e183]:
+          - paragraph [ref=e185]: "\"כהורה לילדה עם סוכרת, הדבר הכי חשוב לי זה לדעת בזמן שיש ירידה או עלייה חדה. החיישן קטן ונוח, והאפליקציה מאוד ברורה.\""
+          - paragraph [ref=e187]:
+            - strong [ref=e188]: יעל לוי
+            - text: אמא לילדה בת 8 עם סוכרת סוג 1
+        - generic [ref=e189]:
+          - paragraph [ref=e191]: "\"מה שאני אוהבת זה הדיוק והיכולת לראות מגמות לאורך כל היום. זה עוזר לי להבין איך הגוף מגיב לאוכל ולפעילות גופנית.\""
+          - paragraph [ref=e193]:
+            - strong [ref=e194]: מורן מסס
+            - text: בן 41, מתמודד עם סוכרת סוג 2
+  - contentinfo [ref=e195]:
+    - generic [ref=e197]:
+      - generic [ref=e198]:
+        - generic [ref=e199]: "כתובת: בני גאון 10, אזה\"ת הדרומי, נתניה, 42293"
+        - 'link "טלפון: 09-9532100" [ref=e200] [cursor=pointer]':
+          - /url: tel:09-9532100
+      - generic [ref=e201]:
+        - heading "המוצר" [level=3] [ref=e202]
+        - link "חיישן GS1 CGM" [ref=e203] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/product/sibionics-gs1/
+      - generic [ref=e204]:
+        - heading "החברה" [level=3] [ref=e205]
+        - link "אודות" [ref=e206] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/about/
+        - link "מדיניות פרטיות" [ref=e207] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/privacy/
+        - link "תנאי שימוש" [ref=e208] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/%d7%aa%d7%a0%d7%90%d7%99-%d7%a9%d7%99%d7%9e%d7%95%d7%a9/
+        - link "הצהרת נגישות" [ref=e209] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/accessibility/
+      - generic [ref=e210]:
+        - heading "שירות תמיכה" [level=3] [ref=e211]
+        - link "שירות לקוחות" [ref=e212] [cursor=pointer]:
+          - /url: https://wordpress-984900-6410677.cloudwaysapps.com/customer-service/
+        - generic [ref=e213]: "שעות פעילות שירות לקוחות: 08:00-18:00"
+      - generic [ref=e215]:
+        - group [ref=e216]:
+          - textbox "שם" [ref=e217]
+        - group [ref=e218]:
+          - textbox "טלפון" [ref=e219]
+        - group [ref=e220]:
+          - textbox "מייל" [ref=e221]
+        - group [ref=e222]:
+          - textbox "במה אפשר לעזור" [ref=e223]
+        - group
+        - group
+        - group
+        - button "חזרו אליי" [ref=e225] [cursor=pointer]:
+          - generic [ref=e226]: חזרו אליי
+  - navigation "Accessibility Options" [ref=e227]:
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - combobox "Select language" [ref=e231] [cursor=pointer]:
+          - img "il" [ref=e233]
+          - paragraph [ref=e234]:
+            - generic [ref=e235]: ישראל
+            - img "תפריט נפתח של אייקון" [ref=e236]
+        - button "Close toolbar" [ref=e237] [cursor=pointer]:
+          - img [ref=e238]
+        - generic [ref=e241]:
+          - img [ref=e243]
+          - generic [ref=e246]: התאמות נגישות
+          - generic [ref=e247]:
+            - paragraph [ref=e249]:
+              - generic [ref=e250]: מופעל על ידי
+              - link "OneTap" [ref=e251] [cursor=pointer]:
+                - /url: https://wponetap.com/?utm_source=frontend-link&utm_medium=link&utm_campaign=ref-link-toolbar
+            - button "Setting toolbar" [ref=e253] [cursor=pointer]: הסתר סרגל כלים
+      - generic [ref=e255]:
+        - generic [ref=e257]: מודולי תוכן
+        - generic [ref=e258]:
+          - generic [ref=e261]:
+            - generic [ref=e262]: Font Size
+            - generic [ref=e263]:
+              - button "Increase Font Size" [ref=e264] [cursor=pointer]:
+                - img [ref=e265]
+              - paragraph [ref=e267]: ברירת מחדל
+              - button "Decrease Font Size" [ref=e268] [cursor=pointer]:
+                - img [ref=e269]
+          - button "גופן קריא" [ref=e270] [cursor=pointer]:
+            - img [ref=e273]
+            - generic [ref=e276]: גופן קריא
+          - generic [ref=e279]:
+            - generic [ref=e280]: גובה שורה
+            - generic [ref=e281]:
+              - button "Increase Line Height" [ref=e282] [cursor=pointer]:
+                - img [ref=e283]
+              - paragraph [ref=e285]: ברירת מחדל
+              - button "Decrease Line Height" [ref=e286] [cursor=pointer]:
+                - img [ref=e287]
+          - button "סמן" [ref=e288] [cursor=pointer]:
+            - img [ref=e291]
+            - generic [ref=e294]: סמן
+          - button "ריווח אותיות" [ref=e295] [cursor=pointer]:
+            - img [ref=e298]
+            - generic [ref=e301]: ריווח אותיות
+          - button "יישר טקסט" [ref=e302] [cursor=pointer]:
+            - img [ref=e305]
+            - generic [ref=e308]: יישר טקסט
+          - button "Font Weight" [ref=e309] [cursor=pointer]:
+            - img [ref=e312]
+            - generic [ref=e315]: Font Weight
+      - generic [ref=e317]:
+        - generic [ref=e319]: צבע מודולים
+        - generic [ref=e320]:
+          - button "Light Contrast" [ref=e321] [cursor=pointer]:
+            - img [ref=e324]
+            - generic [ref=e327]: Light Contrast
+          - button "High Contrast" [ref=e328] [cursor=pointer]:
+            - img [ref=e331]
+            - generic [ref=e334]: High Contrast
+          - button "Monochrome" [ref=e335] [cursor=pointer]:
+            - img [ref=e338]
+            - generic [ref=e341]: Monochrome
+      - generic [ref=e343]:
+        - generic [ref=e345]: מודולי אוריינטציה
+        - generic [ref=e346]:
+          - button "שורת קריאה" [ref=e347] [cursor=pointer]:
+            - img [ref=e350]
+            - generic [ref=e353]: שורת קריאה
+          - button "מסכת קריאה" [ref=e354] [cursor=pointer]:
+            - img [ref=e357]
+            - generic [ref=e360]: מסכת קריאה
+          - button "הסתר תמונות" [ref=e361] [cursor=pointer]:
+            - img [ref=e364]
+            - generic [ref=e367]: הסתר תמונות
+          - button "Highlight Content" [ref=e368] [cursor=pointer]:
+            - img [ref=e371]
+            - generic [ref=e374]: Highlight Content
+          - button "עצור אנימציות" [ref=e375] [cursor=pointer]:
+            - img [ref=e378]
+            - generic [ref=e381]: עצור אנימציות
+          - button "הדגש קישורים" [ref=e382] [cursor=pointer]:
+            - img [ref=e385]
+            - generic [ref=e388]: הדגש קישורים
+      - button "Reset all settings" [ref=e390] [cursor=pointer]: איפוס הגדרות

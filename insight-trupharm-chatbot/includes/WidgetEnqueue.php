@@ -42,6 +42,9 @@ final class WidgetEnqueue {
 		// The CSS contain:paint side-effect of that hides our `position: fixed` floating
 		// button until the user scrolls the mount node into view at the bottom of the body.
 		add_filter( 'rocket_lrc_exclusions', [ __CLASS__, 'rocket_lrc_exclusions' ] );
+		// Exclude the widget bundle + inline bootstrap from WP Rocket "Delay JavaScript Execution";
+		// otherwise the floating button only appears after the visitor's first interaction.
+		add_filter( 'rocket_delay_js_exclusions', [ __CLASS__, 'rocket_delay_js_exclusions' ] );
 	}
 
 	public static function mark_script_untouchable( string $tag, string $handle ): string {
@@ -93,13 +96,13 @@ final class WidgetEnqueue {
 
 	public static function rocket_minify_exclusions( $excluded ): array {
 		$excluded   = is_array( $excluded ) ? $excluded : [];
-		$excluded[] = '/wp-content/mu-plugins/insight-chat/dist/insight-chat.js';
+		$excluded[] = 'insight-trupharm-chatbot/dist/insight-chat.js';
 		return $excluded;
 	}
 
 	public static function rocket_css_exclusions( $excluded ): array {
 		$excluded   = is_array( $excluded ) ? $excluded : [];
-		$excluded[] = '/wp-content/mu-plugins/insight-chat/dist/insight-chat.css';
+		$excluded[] = 'insight-trupharm-chatbot/dist/insight-chat.css';
 		return $excluded;
 	}
 
@@ -109,6 +112,19 @@ final class WidgetEnqueue {
 		// Rocket's lazy-render list and lets the React widget render normally on long pages.
 		$exclusions[] = 'id="insight-chat-root"';
 		return $exclusions;
+	}
+
+	/**
+	 * Exclude the widget's external bundle and inline bootstrap from WP Rocket "Delay JavaScript
+	 * Execution". Matched as substrings against each script (external src or inline content):
+	 * "insight-chat" covers dist/insight-chat.js and the `insight-chat-widget-js-before` inline tag,
+	 * and "INSIGHT_CHAT" covers the window.INSIGHT_CHAT bootstrap.
+	 */
+	public static function rocket_delay_js_exclusions( $excluded ): array {
+		$excluded   = is_array( $excluded ) ? $excluded : [];
+		$excluded[] = 'insight-chat';
+		$excluded[] = 'INSIGHT_CHAT';
+		return $excluded;
 	}
 
 	public static function enqueue(): void {
