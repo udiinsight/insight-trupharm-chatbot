@@ -3,7 +3,7 @@
  * Plugin Name: Insight - Trupharm - Chatbot
  * Plugin URI: https://github.com/udiinsight/insight-trupharm-chatbot
  * Description: Hebrew RTL AI support chatbot for SUGAR360 (Tropharm) — document-grounded answers via AI Engine Pro + Pinecone, with a custom React widget, lead routing, and medical safeguards.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Insight Marketing
  * Author URI: https://insight-marketing.co.il
  * Text Domain: insight-trupharm-chatbot
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INSIGHT_TRUPHARM_CHATBOT_VERSION', '1.0.2' );
+define( 'INSIGHT_TRUPHARM_CHATBOT_VERSION', '1.0.3' );
 
 // Internal constants reused by the bundled modules (carried over from the shared Insight Chat codebase).
 define( 'INSIGHT_CHAT_VERSION', INSIGHT_TRUPHARM_CHATBOT_VERSION );

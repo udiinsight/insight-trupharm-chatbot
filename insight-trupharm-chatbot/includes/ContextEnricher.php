@@ -80,11 +80,14 @@ final class ContextEnricher {
 				$title = (string) ( $row['title'] ?: get_the_title( $ref ) );
 				$url   = (string) get_permalink( $ref );
 			} else {
-				// Document / manual embedding: cite the document title. Uploaded knowledge has no
-				// public permalink, so the source is title-only (the system prompt cites titles).
+				// Document / manual embedding: cite the document title and its source URL (refUrl),
+				// when one was stored with the embedding, so the citation links back to the site page.
 				$title = (string) ( $row['title'] ?? '' );
 				if ( $title === '' && ! empty( $data['title'] ) ) {
 					$title = (string) $data['title'];
+				}
+				if ( ! empty( $data['refUrl'] ) ) {
+					$url = (string) $data['refUrl'];
 				}
 			}
 			$url = self::relativize( $url );
