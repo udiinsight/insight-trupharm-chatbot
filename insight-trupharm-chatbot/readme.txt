@@ -4,7 +4,7 @@ Tags: wordpress, ai, chatbot, ai-engine, hebrew, rtl
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: Proprietary
 License URI: https://insight-marketing.co.il
 
@@ -25,6 +25,9 @@ Requires AI Engine (or AI Engine Pro) installed and configured with an Anthropic
 and a Pinecone embeddings environment. All API keys live in AI Engine settings, never in this plugin.
 
 == Changelog ==
+
+= 1.0.2 =
+* style: theme the widget to the SUGAR360 brand — deep-teal primary (#01615F), mint accent (#2CD09D), and the site's Almoni font.
 
 = 1.0.1 =
 * fix: exclude the widget bundle + bootstrap from WP Rocket "Delay JavaScript Execution" so the chat button appears on page load (not only after interaction).
