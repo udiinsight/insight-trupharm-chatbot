@@ -1,6 +1,5 @@
 import type { InsightChatBootstrap, Lang, Message } from '../types';
 import { STRINGS } from '../lib/lang';
-import { Citations } from './Citations';
 import { SuggestedActions } from './SuggestedActions';
 import { DisclaimerCard } from './DisclaimerCard';
 import { LoadingStatus } from './LoadingStatus';
@@ -74,8 +73,6 @@ export function MessageBubble({ lang, message, cfg, onFollowUp, onAction }: Prop
         <div className="text-ink-900 whitespace-pre-wrap leading-relaxed break-words">
           {reply.response}
         </div>
-
-        <Citations lang={lang} sources={reply.sources} siteUrl={cfg.siteUrl} />
 
         <SuggestedActions
           lang={lang}

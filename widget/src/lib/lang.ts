@@ -41,6 +41,12 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     loadingComposing: 'מנסחת תשובה מותאמת…',
     welcomeTitle: 'הי! אני נועה',
     welcomeBody: 'אעזור לכם במידע על SUGAR360: שימוש והתקנה, מפרט, אחריות והזמנה.',
+    disclaimerMore: 'קרא עוד',
+    disclaimerLess: 'הצג פחות',
+    welcomeDisclaimerShort:
+      'לצורך הנגשת מידע אנו נעזרים בבינה מלאכותית. המידע כאן הוא מסכם בלבד ואינו תחליף לייעוץ רפואי.',
+    welcomeDisclaimerFull:
+      'לצורך הנגשת מידע, אנו נעזרים בבינה מלאכותית מתקדמת.\n\nהמידע בבוט זה הינו מידע מסכם בלבד, המבוסס על עיבוד ואיחוד של מקורות שונים, לרבות אתר החברה ומקורות פומביים, ובכלל זה אתר משרד הבריאות, קופות חולים ועמותות חולים.\n\nחשוב לציין כי המידע המתקבל באמצעות הבוט נועד למטרות מידע והכוונה בלבד, ואינו מהווה תחליף לייעוץ רפואי אישי, אבחון או טיפול על ידי רופא, אחות סוכרת או איש מקצוע מוסמך. בכל שאלה או חשש רפואי, לרבות שינוי טיפול או מצב רפואי חריג, יש לפנות לגורם מוסמך כאמור.\n\nלמען הסר ספק, בשימוש בכלי AI ייתכנו טעויות או מידע שאינו עדכני או מלא, ויש לאמת את המידע מול מקור רשמי, כגון הוראות השימוש למוצר, המדריך למשתמש ו/או גורם רפואי מוסמך.\n\nהשימוש בבוט כפוף לתקנון השימוש באתר, ומהווה אישור כי המשתמש קרא והסכים לתנאיו, לרבות ההתניות והגבלות האחריות המפורטות בו.',
   },
   en: {
     open: 'Open chat',
@@ -70,5 +76,11 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     loadingComposing: 'Composing a tailored answer…',
     welcomeTitle: "Hi! I'm Noa",
     welcomeBody: 'I can help with SUGAR360: setup and use, specs, warranty, and ordering.',
+    disclaimerMore: 'Read more',
+    disclaimerLess: 'Show less',
+    welcomeDisclaimerShort:
+      'To make information accessible we use AI. The information here is a summary only and does not replace medical advice.',
+    welcomeDisclaimerFull:
+      'To make information accessible, we use advanced artificial intelligence.\n\nThe information in this bot is a summary only, based on processing and combining various sources, including the company website and public sources such as the Ministry of Health, health funds (kupot cholim), and patient associations.\n\nPlease note that information provided by the bot is intended for information and guidance only, and does not replace personal medical advice, diagnosis, or treatment by a doctor, diabetes nurse, or qualified professional. For any medical question or concern, including a change in treatment or an unusual medical condition, please consult such a qualified provider.\n\nFor the avoidance of doubt, when using AI tools there may be errors or information that is not up to date or complete, and you should verify the information against an official source, such as the product instructions for use, the user guide, and/or a qualified medical provider.\n\nUse of the bot is subject to the website terms of use, and constitutes confirmation that the user has read and agreed to them, including the conditions and limitations of liability detailed therein.',
   },
 };
