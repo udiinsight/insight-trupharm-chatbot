@@ -39,3 +39,12 @@ insight-keys.json
 # Test / browser artifacts
 .playwright-mcp/
 /*.png
+
+# Client source documents (raw originals — keep out of the public repo)
+Knowlage source docs/
+
+# Internal session handoff (operational detail — local only)
+HANDOFF.md
+
+# Local extraction scratch (doc → text, not for the repo)
+.tmp-extract/
