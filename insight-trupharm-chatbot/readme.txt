@@ -4,7 +4,7 @@ Tags: wordpress, ai, chatbot, ai-engine, hebrew, rtl
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: Proprietary
 License URI: https://insight-marketing.co.il
 
@@ -25,6 +25,9 @@ Requires AI Engine (or AI Engine Pro) installed and configured with an Anthropic
 and a Pinecone embeddings environment. All API keys live in AI Engine settings, never in this plugin.
 
 == Changelog ==
+
+= 1.0.5 =
+* feat: WhatsApp customer-service CTA (054-5005138) — new `whatsapp` suggested-action type; the widget builds the wa.me link with a prefilled conversation summary composed by the model on contact/escalation turns.
 
 = 1.0.4 =
 * feat: opening disclaimer (פתיח) on the welcome screen — a short AI/medical notice with a "קרא עוד" expander showing the full client-approved text.

@@ -1,7 +1,20 @@
 import type { Lang, SuggestedAction } from '../types';
 import { resolveUrl } from '../lib/parse';
+import { STRINGS } from '../lib/lang';
 import { ExternalIcon, LinkIcon, PhoneIcon, WhatsAppIcon } from './icons';
 import type { JSX } from 'react';
+
+// Customer-service WhatsApp (054-5005138). Not published on the site yet — the number
+// lives here (and in the system prompt) so the widget builds the wa.me link itself and
+// the LLM only supplies the plain-text conversation summary.
+const WHATSAPP_PHONE = '972545005138';
+
+/** wa.me link with the localized opener + the LLM's conversation summary prefilled. */
+function whatsappUrl(lang: Lang, summary: string): string {
+  const opener = STRINGS[lang].whatsappOpener;
+  const text = summary ? `${opener}\n${summary}` : opener;
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+}
 
 interface Props {
   lang: Lang;
@@ -92,6 +105,24 @@ export function SuggestedActions({ lang, actions, siteUrl, onFollowUp, onAction,
             >
               {a.label}
             </button>
+          );
+        }
+
+        if (a.type === 'whatsapp') {
+          return (
+            <a
+              key={key}
+              href={whatsappUrl(lang, a.summary ?? '')}
+              target="_blank"
+              rel="noopener noreferrer"
+              // Log the bare channel URL, not the prefilled text (keeps the summary out of analytics).
+              onClick={() => onNavigate?.(`https://wa.me/${WHATSAPP_PHONE}`, a.label)}
+              className={`${pillBase} ${cta}`}
+              dir={lang === 'he' ? 'rtl' : 'ltr'}
+            >
+              <WhatsAppIcon className="h-4 w-4 shrink-0" />
+              <span>{a.label}</span>
+            </a>
           );
         }
 

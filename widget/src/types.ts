@@ -10,6 +10,7 @@ export interface Source {
 export type SuggestedAction =
   | { type: 'follow_up'; label: string; prompt: string }
   | { type: 'navigate'; label: string; url: string }
+  | { type: 'whatsapp'; label: string; summary: string }
   | { type: 'action'; label: string; action: string };
 
 export interface StructuredReply {

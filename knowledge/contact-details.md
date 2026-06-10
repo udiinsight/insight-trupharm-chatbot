@@ -7,7 +7,7 @@ These are live values scraped from the site and already wired into `system-promp
 - Email: via the **contact form** on the customer-service page (the address is obfuscated on the site).
 - Contact page: https://sugar360.co.il/customer-service/
 - Purchase / order page: https://sugar360.co.il/product/sibionics-gs1/
-- **WhatsApp: none** — the site offers phone + contact form only (no WhatsApp channel). Lead-routing CTAs therefore use phone + contact page + product page, not WhatsApp.
+- **WhatsApp: 054-5005138** (customer service; added 2026-06-10, NOT yet published on the website — number provided by Udi). The chat offers it via the `whatsapp` suggested-action with a prefilled conversation summary (wa.me/972545005138; link built by the widget).
 - Official importer: תרופארם שיווק 1985 בע"מ, רחוב בני גאון 10, ת.ד. 8105, נתניה 4250499.
 - Address: בני גאון 10, אזור התעשייה הדרומי, נתניה, 42293.
 

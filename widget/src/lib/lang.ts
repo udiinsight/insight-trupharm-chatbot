@@ -43,6 +43,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     welcomeBody: 'אעזור לכם במידע על SUGAR360: שימוש והתקנה, מפרט, אחריות והזמנה.',
     disclaimerMore: 'קרא עוד',
     disclaimerLess: 'הצג פחות',
+    whatsappOpener: 'שלום, הגעתי מהצ׳אט באתר SUGAR360. תקציר הפנייה:',
     welcomeDisclaimerShort:
       'לצורך הנגשת מידע אנו נעזרים בבינה מלאכותית. המידע כאן הוא מסכם בלבד ואינו תחליף לייעוץ רפואי.',
     welcomeDisclaimerFull:
@@ -78,6 +79,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     welcomeBody: 'I can help with SUGAR360: setup and use, specs, warranty, and ordering.',
     disclaimerMore: 'Read more',
     disclaimerLess: 'Show less',
+    whatsappOpener: 'Hello, I am coming from the SUGAR360 website chat. Conversation summary:',
     welcomeDisclaimerShort:
       'To make information accessible we use AI. The information here is a summary only and does not replace medical advice.',
     welcomeDisclaimerFull:
