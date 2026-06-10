@@ -7,6 +7,14 @@ function randomId(): string {
   return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
 }
 
+/** A fresh chat/discussion id, generated client-side per conversation.
+ *  AI Engine treats the client as the owner of the conversation state: it does NOT
+ *  return a chatId on submit, so without this every message would open a new
+ *  discussion server-side. */
+export function newChatId(): string {
+  return randomId();
+}
+
 /** A session ID lives in localStorage so it survives the same browser session
  *  even if the visitor closes and reopens the widget. We never PII-hash here —
  *  the backend will salt+hash on its end. */

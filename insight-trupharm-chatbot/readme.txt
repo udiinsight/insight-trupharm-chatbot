@@ -4,7 +4,7 @@ Tags: wordpress, ai, chatbot, ai-engine, hebrew, rtl
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: Proprietary
 License URI: https://insight-marketing.co.il
 
@@ -25,6 +25,9 @@ Requires AI Engine (or AI Engine Pro) installed and configured with an Anthropic
 and a Pinecone embeddings environment. All API keys live in AI Engine settings, never in this plugin.
 
 == Changelog ==
+
+= 1.0.6 =
+* fix: multi-turn conversation memory — the widget now sends the conversation history (`messages`) and a client-generated `chatId` with every submit. AI Engine builds the model's history from the client-sent messages; without them every message was a brand-new conversation (and each one opened a separate discussion row). This also makes the WhatsApp handoff summary actually reflect the session.
 
 = 1.0.5 =
 * feat: WhatsApp customer-service CTA (054-5005138) — new `whatsapp` suggested-action type; the widget builds the wa.me link with a prefilled conversation summary composed by the model on contact/escalation turns.

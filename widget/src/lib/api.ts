@@ -1,5 +1,13 @@
 import type { InsightChatBootstrap, Lang, Starter } from '../types';
 
+/** Prior conversation turns. AI Engine reads the history the model sees from the
+ *  client-sent `messages` param (query/base.php inject_params → set_messages) —
+ *  it does NOT rebuild it from stored discussions. Omitting it = stateless bot. */
+export interface HistoryMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export interface ChatSubmitResponse {
   /** AI Engine returns the assistant text in `data` (non-streaming) or a `reply` field. */
   data?: string;
@@ -14,6 +22,7 @@ export async function submitChat(
   cfg: InsightChatBootstrap,
   message: string,
   chatId?: string,
+  messages: HistoryMessage[] = [],
 ): Promise<{ text: string; chatId?: string; raw: ChatSubmitResponse }> {
   const res = await fetch(cfg.chatEndpoint, {
     method: 'POST',
@@ -26,6 +35,7 @@ export async function submitChat(
       botId: cfg.botId,
       newMessage: message,
       chatId,
+      messages,
       stream: false,
     }),
   });
@@ -70,6 +80,7 @@ export async function submitChatStream(
   cfg: InsightChatBootstrap,
   message: string,
   chatId: string | undefined,
+  messages: HistoryMessage[],
   cb: StreamCallbacks,
 ): Promise<void> {
   const res = await fetch(cfg.chatEndpoint, {
@@ -84,6 +95,7 @@ export async function submitChatStream(
       botId: cfg.botId,
       newMessage: message,
       chatId,
+      messages,
       stream: true,
     }),
   });

@@ -1,9 +1,10 @@
 import { useCallback, useRef, useState } from 'react';
 import type { InsightChatBootstrap, Lang, Message, StructuredReply } from '../types';
 import { submitChatStream, logEvent } from '../lib/api';
+import type { HistoryMessage } from '../lib/api';
 import { parseStructured, progressiveParse } from '../lib/parse';
 import { detectLang } from '../lib/lang';
-import { getSessionId } from '../lib/session';
+import { getSessionId, newChatId } from '../lib/session';
 
 interface State {
   messages: Message[];
@@ -43,6 +44,11 @@ function newTypewriter(): Typewriter {
 export function useChat(cfg: InsightChatBootstrap) {
   const [state, setState] = useState<State>({ messages: [], lang: cfg.defaultLang });
   const chatIdRef = useRef<string | undefined>(undefined);
+  // Prior turns sent with every submit. AI Engine builds the model's history from
+  // this client-side array (it does not rebuild it from stored discussions) — without
+  // it every message starts a brand-new conversation. Assistant entries keep the raw
+  // model output (the JSON string) so they match what the server logs in Discussions.
+  const historyRef = useRef<HistoryMessage[]>([]);
   const inFlight = useRef(false);
   const typewriter = useRef<Typewriter>(newTypewriter());
 
@@ -127,7 +133,8 @@ export function useChat(cfg: InsightChatBootstrap) {
       };
 
       try {
-        await submitChatStream(cfg, trimmed, chatIdRef.current, {
+        if (!chatIdRef.current) chatIdRef.current = newChatId();
+        await submitChatStream(cfg, trimmed, chatIdRef.current, historyRef.current.slice(-14), {
           onLive: (delta) => {
             buffer += delta;
             if (tw.finalReply) return; // already locked; ignore trailing tokens
@@ -145,6 +152,14 @@ export function useChat(cfg: InsightChatBootstrap) {
           },
           onEnd: ({ text, chatId }) => {
             if (chatId) chatIdRef.current = chatId;
+            const raw = text || buffer;
+            if (raw) {
+              historyRef.current = [
+                ...historyRef.current,
+                { role: 'user' as const, content: trimmed },
+                { role: 'assistant' as const, content: raw },
+              ].slice(-14);
+            }
             if (tw.finalReply) {
               // Already locked from progressiveParse(.full).
               scheduleTick();
