@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { InsightChatBootstrap } from './types';
 import { dirFor } from './lib/lang';
+import { refreshNonce } from './lib/api';
 import { resolveUrl } from './lib/parse';
 import { FloatingButton } from './components/FloatingButton';
 import { ChatPanel } from './components/ChatPanel';
@@ -22,6 +23,14 @@ function readDismissed(): boolean {
 export function App({ cfg }: Props) {
   const [open, setOpen] = useState(false);
   const [dismissed, setDismissed] = useState<boolean>(readDismissed);
+
+  // The bootstrap nonce is baked into (possibly stale) cached page HTML.
+  // Swap it for a fresh one when the chat opens so the first submit doesn't
+  // need the 401-retry round-trip. Fire-and-forget: the retry in api.ts is
+  // the safety net if this fails or the session outlives this nonce too.
+  useEffect(() => {
+    if (open) void refreshNonce(cfg);
+  }, [open, cfg]);
 
   // Once dismissed, the entire widget disappears for the rest of the session.
   // Comes back on the next visit (sessionStorage clears when the browser/tab closes).

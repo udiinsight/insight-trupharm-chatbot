@@ -5,6 +5,7 @@
  * Namespace: insight-chat/v1
  *
  *   GET  /starter-questions?lang=he|en       — public
+ *   GET  /nonce                                — public, uncached fresh wp_rest nonce
  *   POST /events                              — public, nonce-protected
  *   GET  /health                              — admin only
  *
@@ -55,6 +56,12 @@ final class RestApi {
 				'lang'       => [ 'type' => 'string', 'enum' => [ 'he', 'en' ] ],
 				'meta'       => [ 'type' => 'object' ],
 			],
+		] );
+
+		register_rest_route( self::NAMESPACE, '/nonce', [
+			'methods'             => 'GET',
+			'permission_callback' => '__return_true',
+			'callback'            => [ __CLASS__, 'nonce' ],
 		] );
 
 		register_rest_route( self::NAMESPACE, '/health', [
@@ -109,6 +116,22 @@ final class RestApi {
 			'meta'       => (array) ( $request->get_param( 'meta' ) ?? [] ),
 		] );
 		return new \WP_REST_Response( [ 'logged' => true ], 202 );
+	}
+
+	/**
+	 * Fresh `wp_rest` nonce for the current visitor session.
+	 *
+	 * The nonce baked into the page HTML (WidgetEnqueue bootstrap) goes stale when
+	 * WP Rocket serves a cached page older than the nonce lifetime (~24h), which
+	 * makes every chat submit 401. REST responses bypass the page cache, so the
+	 * widget refreshes its nonce from here on open and retries once on 401.
+	 */
+	public static function nonce(): \WP_REST_Response {
+		$response = new \WP_REST_Response( [
+			'nonce' => wp_create_nonce( 'wp_rest' ),
+		], 200 );
+		$response->header( 'Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0' );
+		return $response;
 	}
 
 	public static function health( \WP_REST_Request $request ): \WP_REST_Response {

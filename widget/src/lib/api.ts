@@ -18,27 +18,62 @@ export interface ChatSubmitResponse {
   extra?: { actions?: unknown[]; chatId?: string };
 }
 
+/**
+ * Refresh the wp_rest nonce from the plugin's uncached /nonce endpoint.
+ *
+ * The nonce baked into the page bootstrap goes stale when WP Rocket serves a
+ * cached page older than the nonce lifetime (~24h) — every submit then 401s.
+ * REST responses bypass the page cache, so this always yields a nonce valid
+ * for the current visitor session. Mutates `cfg.nonce` in place so all
+ * subsequent calls pick it up. Returns false if the refresh itself failed.
+ */
+export async function refreshNonce(cfg: InsightChatBootstrap): Promise<boolean> {
+  try {
+    const res = await fetch(`${cfg.apiBase}/nonce`, { credentials: 'same-origin' });
+    if (!res.ok) return false;
+    const json = (await res.json()) as { nonce?: string };
+    if (typeof json.nonce === 'string' && json.nonce) {
+      cfg.nonce = json.nonce;
+      return true;
+    }
+  } catch {
+    // network error — keep the old nonce
+  }
+  return false;
+}
+
+/** True for the statuses WordPress returns on a stale/invalid nonce. */
+function isNonceRejection(status: number): boolean {
+  return status === 401 || status === 403;
+}
+
 export async function submitChat(
   cfg: InsightChatBootstrap,
   message: string,
   chatId?: string,
   messages: HistoryMessage[] = [],
 ): Promise<{ text: string; chatId?: string; raw: ChatSubmitResponse }> {
-  const res = await fetch(cfg.chatEndpoint, {
-    method: 'POST',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-WP-Nonce': cfg.nonce,
-    },
-    body: JSON.stringify({
-      botId: cfg.botId,
-      newMessage: message,
-      chatId,
-      messages,
-      stream: false,
-    }),
-  });
+  const doFetch = () =>
+    fetch(cfg.chatEndpoint, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': cfg.nonce,
+      },
+      body: JSON.stringify({
+        botId: cfg.botId,
+        newMessage: message,
+        chatId,
+        messages,
+        stream: false,
+      }),
+    });
+
+  let res = await doFetch();
+  if (isNonceRejection(res.status) && (await refreshNonce(cfg))) {
+    res = await doFetch();
+  }
 
   let json: ChatSubmitResponse | null = null;
   try {
@@ -83,22 +118,28 @@ export async function submitChatStream(
   messages: HistoryMessage[],
   cb: StreamCallbacks,
 ): Promise<void> {
-  const res = await fetch(cfg.chatEndpoint, {
-    method: 'POST',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-WP-Nonce': cfg.nonce,
-      Accept: 'text/event-stream',
-    },
-    body: JSON.stringify({
-      botId: cfg.botId,
-      newMessage: message,
-      chatId,
-      messages,
-      stream: true,
-    }),
-  });
+  const doFetch = () =>
+    fetch(cfg.chatEndpoint, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-WP-Nonce': cfg.nonce,
+        Accept: 'text/event-stream',
+      },
+      body: JSON.stringify({
+        botId: cfg.botId,
+        newMessage: message,
+        chatId,
+        messages,
+        stream: true,
+      }),
+    });
+
+  let res = await doFetch();
+  if (isNonceRejection(res.status) && (await refreshNonce(cfg))) {
+    res = await doFetch();
+  }
 
   if (!res.ok || !res.body) {
     cb.onError(`HTTP ${res.status}`);
