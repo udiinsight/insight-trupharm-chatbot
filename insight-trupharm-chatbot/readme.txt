@@ -4,7 +4,7 @@ Tags: wordpress, ai, chatbot, ai-engine, hebrew, rtl
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 License: Proprietary
 License URI: https://insight-marketing.co.il
 
@@ -25,6 +25,12 @@ Requires AI Engine (or AI Engine Pro) installed and configured with an Anthropic
 and a Pinecone embeddings environment. All API keys live in AI Engine settings, never in this plugin.
 
 == Changelog ==
+
+= 1.0.8 =
+* fix: logged-in users got `rest_cookie_invalid_nonce` (403) on every chat message. The REST API demotes cookie-authenticated requests without a valid nonce to user 0, so the `/nonce` endpoint minted anonymous nonces that failed validation for logged-in users. The endpoint now re-validates the logged-in cookie and mints the nonce for the correct user context.
+
+= 1.0.7 =
+* fix: survive stale cached nonces — uncached `/nonce` endpoint, nonce refresh on chat open, and a refresh-and-retry on 401/403 rejections.
 
 = 1.0.6 =
 * fix: multi-turn conversation memory — the widget now sends the conversation history (`messages`) and a client-generated `chatId` with every submit. AI Engine builds the model's history from the client-sent messages; without them every message was a brand-new conversation (and each one opened a separate discussion row). This also makes the WhatsApp handoff summary actually reflect the session.

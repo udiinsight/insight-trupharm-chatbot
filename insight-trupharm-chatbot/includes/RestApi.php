@@ -127,6 +127,18 @@ final class RestApi {
 	 * widget refreshes its nonce from here on open and retries once on 401.
 	 */
 	public static function nonce(): \WP_REST_Response {
+		// REST demotes cookie-authenticated requests that carry no valid nonce to user 0
+		// (rest_cookie_check_errors). A nonce minted here as user 0 then fails validation on
+		// the submit request, where the same cookies DO authenticate the real user — so
+		// logged-in visitors get rest_cookie_invalid_nonce on every chat message. Re-validate
+		// the logged-in cookie ourselves so the nonce is minted for the same user context the
+		// submit will be validated in. Anonymous visitors are unaffected (no cookie, uid 0).
+		if ( ! is_user_logged_in() ) {
+			$uid = wp_validate_auth_cookie( '', 'logged_in' );
+			if ( $uid ) {
+				wp_set_current_user( $uid );
+			}
+		}
 		$response = new \WP_REST_Response( [
 			'nonce' => wp_create_nonce( 'wp_rest' ),
 		], 200 );
