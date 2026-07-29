@@ -4,7 +4,7 @@ Tags: wordpress, ai, chatbot, ai-engine, hebrew, rtl
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: Proprietary
 License URI: https://insight-marketing.co.il
 
@@ -25,6 +25,11 @@ Requires AI Engine (or AI Engine Pro) installed and configured with an Anthropic
 and a Pinecone embeddings environment. All API keys live in AI Engine settings, never in this plugin.
 
 == Changelog ==
+
+= 1.0.9 =
+* feat: longer, more detailed welcome message listing what the bot can help with (HE + EN).
+* feat: larger, more prominent send button in the composer.
+* fix: the generic error bubble no longer says "משהו השתבש" — it now points the visitor to customer service (WhatsApp / phone / hours).
 
 = 1.0.8 =
 * fix: logged-in users got `rest_cookie_invalid_nonce` (403) on every chat message. The REST API demotes cookie-authenticated requests without a valid nonce to user 0, so the `/nonce` endpoint minted anonymous nonces that failed validation for logged-in users. The endpoint now re-validates the logged-in cookie and mints the nonce for the correct user context.

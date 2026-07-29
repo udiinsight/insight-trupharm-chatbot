@@ -72,9 +72,9 @@ export function Composer({ lang, disabled, onSend, onLangChange }: Props) {
         type="submit"
         disabled={disabled || !value.trim()}
         aria-label={t.send}
-        className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-600 text-white shadow-button transition-opacity hover:bg-brand-700 disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+        className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-brand-600 text-white shadow-button ring-2 ring-brand-200 transition hover:bg-brand-700 hover:scale-105 active:scale-95 disabled:opacity-40 disabled:hover:scale-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-400"
       >
-        <SendIcon className="h-4 w-4 rtl:-scale-x-100" />
+        <SendIcon className="h-6 w-6 rtl:-scale-x-100" />
       </button>
     </form>
   );

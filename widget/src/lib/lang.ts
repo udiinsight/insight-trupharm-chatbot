@@ -27,7 +27,8 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     actionRequestCallback: 'תיאום שיחה',
     actionContactClinic: 'יצירת קשר',
     actionOpenDoctorFinder: 'שירות לקוחות',
-    error: 'משהו השתבש. אפשר לנסות שוב בעוד רגע.',
+    error:
+      'לא הצלחתי להביא תשובה כרגע. אפשר לנסות לשאול שוב, או לשלוח הודעה לשירות הלקוחות בוואטסאפ 054-5005138 או בטלפון 09-7436555, בימים א׳ עד ה׳ בין 8:00 ל 16:00.',
     disclaimerGeneral:
       'המידע כאן נועד להכרות כללית עם מערכת SUGAR360 ואינו מחליף ייעוץ רפואי אישי. לפני החלטה הקשורה לבריאותך או לאיזון הסוכרת, התייעצי עם הרופא או צוות הסוכרת המטפל.',
     disclaimerPersonal:
@@ -40,7 +41,8 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     loadingSearching: 'נועה בודקת במאגר…',
     loadingComposing: 'מנסחת תשובה מותאמת…',
     welcomeTitle: 'הי! אני נועה',
-    welcomeBody: 'אעזור לכם במידע על SUGAR360: שימוש והתקנה, מפרט, אחריות והזמנה.',
+    welcomeBody:
+      'אני העוזרת הדיגיטלית של SUGAR360, מערכת הניטור הרציף של הסוכר מבית תרופארם, עם חיישן SIBIONICS GS1.\n\nאפשר לשאול אותי על:\n• איך החיישן עובד, המפרט ורמת הדיוק\n• התקנה, צימוד לאפליקציה וקבלת קריאות\n• שימוש יומיומי, מים, מקלחת וספורט\n• מחיר, הזמנה ומשלוח\n• אחריות, החזרות והחלפה\n• תקלות ובעיות בשימוש בחיישן\n\nכתבו לי בשפה חופשית או בחרו אחת מהשאלות הנפוצות למטה. אני לא נותנת ייעוץ רפואי, ולכל שאלה אישית כדאי להתייעץ עם הרופא או צוות הסוכרת המטפל.',
     disclaimerMore: 'קרא עוד',
     disclaimerLess: 'הצג פחות',
     whatsappOpener: 'שלום, הגעתי מהצ׳אט באתר SUGAR360. תקציר הפנייה:',
@@ -63,7 +65,8 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     actionRequestCallback: 'Request a call',
     actionContactClinic: 'Contact us',
     actionOpenDoctorFinder: 'Customer service',
-    error: 'Something went wrong. Please try again in a moment.',
+    error:
+      'I could not get an answer just now. Please try asking again, or message customer service on WhatsApp 054-5005138 or call 09-7436555, Sunday to Thursday 8:00 to 16:00.',
     disclaimerGeneral:
       'This information is for general orientation about SUGAR360 and does not replace personal medical advice. Before any decision related to your health or diabetes management, consult your doctor or diabetes care team.',
     disclaimerPersonal:
@@ -76,7 +79,8 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     loadingSearching: 'Noa is checking the knowledge base…',
     loadingComposing: 'Composing a tailored answer…',
     welcomeTitle: "Hi! I'm Noa",
-    welcomeBody: 'I can help with SUGAR360: setup and use, specs, warranty, and ordering.',
+    welcomeBody:
+      'I am the digital assistant for SUGAR360, the continuous glucose monitoring system by Tropharm, with the SIBIONICS GS1 sensor.\n\nYou can ask me about:\n• How the sensor works, its specs and accuracy\n• Installation, pairing with the app and getting readings\n• Everyday use, water, showering and sport\n• Price, ordering and shipping\n• Warranty, returns and replacement\n• Problems and faults while using the sensor\n\nWrite to me in your own words, or pick one of the common questions below. I do not give medical advice, so for anything personal please consult your doctor or diabetes care team.',
     disclaimerMore: 'Read more',
     disclaimerLess: 'Show less',
     whatsappOpener: 'Hello, I am coming from the SUGAR360 website chat. Conversation summary:',

@@ -34,9 +34,11 @@ export function WelcomeIntro({ lang, avatar }: Props) {
           </div>
         )}
       </div>
-      <div className="rounded-2xl rounded-bl-md bg-white border border-accent-100 px-4 py-3 shadow-sm max-w-[85%]">
+      <div className="rounded-2xl rounded-bl-md bg-white border border-accent-100 px-4 py-3 shadow-sm w-[92%] text-start">
         <div className="font-semibold text-ink-900">{t.welcomeTitle}</div>
-        <div className="mt-1 text-sm text-ink-700 leading-relaxed">{t.welcomeBody}</div>
+        <div className="mt-1 text-sm text-ink-700 leading-relaxed whitespace-pre-line">
+          {t.welcomeBody}
+        </div>
       </div>
 
       <div className="w-[92%] rounded-xl border border-amber-200 bg-amber-50/70 px-3.5 py-3 text-start">
