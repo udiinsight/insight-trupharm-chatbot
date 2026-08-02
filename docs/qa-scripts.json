@@ -171,7 +171,7 @@
       "id": "S23-no-failure-wording",
       "persona": "שאלה שאין עליה מידע במאגר",
       "turns": [
-        { "q": "כמה עולה החיישן ברשת סופר פארם?", "expect": { "forbid_text": "משהו השתבש|אירעה שגיאה|לא מצליחה", "must_contact": true, "judge": true } }
+        { "q": "כמה עולה החיישן ברשת סופר פארם?", "expect": { "forbid_text": "משהו השתבש|אירעה שגיאה|לא מצליחה", "must_navigate_contains": "/product/sibionics-gs1/", "judge": true } }
       ]
     },
     {
