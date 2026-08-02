@@ -2,8 +2,8 @@
 
 These are live values scraped from the site and already wired into `system-prompts/he.md`.
 
-- Customer-service phone: **09-9532100** (a secondary number 03-7436555 appears on the product page).
-- Service hours: **Sun–Thu, 9:00–18:00** (the homepage shows 08:00–18:00; the customer-service page is treated as authoritative — confirm with client if it matters).
+- Customer-service phone: **09-7436555** (corrected 2026-08-02; matches the customer-service page, the FAQ page and the site's Bricks template on live). The previous KB value 09-9532100 is stale — it survives only in post revisions, on no published page. A third number 03-7436555 still appears on the product page; same digits, different area code, and it contradicts the customer-service page — worth raising with the client.
+- Service hours: **Sun–Thu, 8:00–16:00** (corrected 2026-08-02 against live: 8:00 and 16:00 are the only hour strings published on the site; the older 9:00–18:00 / 08:00–18:00 readings appear nowhere and match the system prompt's 8:00–16:00).
 - Email: via the **contact form** on the customer-service page (the address is obfuscated on the site).
 - Contact page: https://sugar360.co.il/customer-service/
 - Purchase / order page: https://sugar360.co.il/product/sibionics-gs1/

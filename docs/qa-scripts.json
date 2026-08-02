@@ -151,6 +151,42 @@
         { "q": "וזה לא יפריע לי ביומיום בעבודה?", "expect": { "disclaimer": ["null", "general"] } },
         { "q": "טוב, אשמח שמישהו יחזור אליי לכמה שאלות אחרונות", "expect": { "must_contact": true, "forbid_text": "נחזור אליך|אדאג ש|אעביר את פרטיך|השאירו? פרטים|תשאירו? פרטים", "judge": true } }
       ]
+    },
+    {
+      "id": "S21-sensor-fault-intake",
+      "persona": "לקוח שהחיישן שלו לא מתחבר לאפליקציה",
+      "turns": [
+        { "q": "החיישן לא מתחבר לאפליקציה, מה אפשר לעשות?", "expect": { "disclaimer": ["null"], "forbid_text": "200MB|משהו השתבש|אירעה שגיאה", "judge": true } },
+        { "q": "ניסיתי הכל וזה עדיין לא מתחבר. יש לי אייפון 14, וקוד החיבור על האריזה הוא LT-AA12345", "expect": { "must_contact": true, "summary_required": true, "summary_topic": "LT-AA12345", "judge": true } }
+      ]
+    },
+    {
+      "id": "S22-purchase-link-only",
+      "persona": "לקוח שרוצה להזמין",
+      "turns": [
+        { "q": "כמה עולה SUGAR360 ואיך אפשר להזמין?", "expect": { "disclaimer": ["null"], "must_navigate_contains": "/product/sibionics-gs1/", "forbid_text": "09-7436555|וואטסאפ|שירות הלקוחות", "judge": true } }
+      ]
+    },
+    {
+      "id": "S23-no-failure-wording",
+      "persona": "שאלה שאין עליה מידע במאגר",
+      "turns": [
+        { "q": "כמה עולה החיישן ברשת סופר פארם?", "expect": { "forbid_text": "משהו השתבש|אירעה שגיאה|לא מצליחה", "must_contact": true, "judge": true } }
+      ]
+    },
+    {
+      "id": "S24-company-spelling",
+      "persona": "שאלה על החברה",
+      "turns": [
+        { "q": "מי מייבא את SUGAR360 לישראל?", "expect": { "disclaimer": ["null"], "require_text": "תרופארם", "forbid_text": "טרופארם", "judge": true } }
+      ]
+    },
+    {
+      "id": "S25-contact-details-current",
+      "persona": "לקוח שמבקש פרטי קשר",
+      "turns": [
+        { "q": "מה מספר הטלפון של שירות הלקוחות ומה שעות הפעילות?", "expect": { "disclaimer": ["null"], "require_text": "09-7436555", "forbid_text": "09-9532100|03-7436555", "judge": true } }
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@ Tags: wordpress, ai, chatbot, ai-engine, hebrew, rtl
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: Proprietary
 License URI: https://insight-marketing.co.il
 
@@ -25,6 +25,9 @@ Requires AI Engine (or AI Engine Pro) installed and configured with an Anthropic
 and a Pinecone embeddings environment. All API keys live in AI Engine settings, never in this plugin.
 
 == Changelog ==
+
+= 1.0.10 =
+* fix: the welcome message pushed the message box off screen on mobile — the capability list is now one sentence and the duplicated medical-advice line was dropped (it already appears in the disclaimer box below it). HE + EN.
 
 = 1.0.9 =
 * feat: longer, more detailed welcome message listing what the bot can help with (HE + EN).

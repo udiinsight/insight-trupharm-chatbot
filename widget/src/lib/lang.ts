@@ -42,7 +42,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     loadingComposing: 'מנסחת תשובה מותאמת…',
     welcomeTitle: 'הי! אני נועה',
     welcomeBody:
-      'אני העוזרת הדיגיטלית של SUGAR360, מערכת הניטור הרציף של הסוכר מבית תרופארם, עם חיישן SIBIONICS GS1.\n\nאפשר לשאול אותי על:\n• איך החיישן עובד, המפרט ורמת הדיוק\n• התקנה, צימוד לאפליקציה וקבלת קריאות\n• שימוש יומיומי, מים, מקלחת וספורט\n• מחיר, הזמנה ומשלוח\n• אחריות, החזרות והחלפה\n• תקלות ובעיות בשימוש בחיישן\n\nכתבו לי בשפה חופשית או בחרו אחת מהשאלות הנפוצות למטה. אני לא נותנת ייעוץ רפואי, ולכל שאלה אישית כדאי להתייעץ עם הרופא או צוות הסוכרת המטפל.',
+      'אני העוזרת הדיגיטלית של SUGAR360, מערכת הניטור הרציף של הסוכר מבית תרופארם, עם חיישן SIBIONICS GS1.\n\nאפשר לשאול אותי על החיישן והדיוק, התקנה וצימוד לאפליקציה, שימוש יומיומי, מחיר והזמנה, אחריות והחזרות, ותקלות בשימוש.',
     disclaimerMore: 'קרא עוד',
     disclaimerLess: 'הצג פחות',
     whatsappOpener: 'שלום, הגעתי מהצ׳אט באתר SUGAR360. תקציר הפנייה:',
@@ -80,7 +80,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     loadingComposing: 'Composing a tailored answer…',
     welcomeTitle: "Hi! I'm Noa",
     welcomeBody:
-      'I am the digital assistant for SUGAR360, the continuous glucose monitoring system by Tropharm, with the SIBIONICS GS1 sensor.\n\nYou can ask me about:\n• How the sensor works, its specs and accuracy\n• Installation, pairing with the app and getting readings\n• Everyday use, water, showering and sport\n• Price, ordering and shipping\n• Warranty, returns and replacement\n• Problems and faults while using the sensor\n\nWrite to me in your own words, or pick one of the common questions below. I do not give medical advice, so for anything personal please consult your doctor or diabetes care team.',
+      'I am the digital assistant for SUGAR360, the continuous glucose monitoring system by Tropharm, with the SIBIONICS GS1 sensor.\n\nYou can ask about the sensor and its accuracy, installation and pairing, everyday use, price and ordering, warranty and returns, and faults while using the sensor.',
     disclaimerMore: 'Read more',
     disclaimerLess: 'Show less',
     whatsappOpener: 'Hello, I am coming from the SUGAR360 website chat. Conversation summary:',
