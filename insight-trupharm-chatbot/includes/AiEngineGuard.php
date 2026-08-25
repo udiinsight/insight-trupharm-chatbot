@@ -95,27 +95,56 @@ final class AiEngineGuard {
 		$new['ai_envs'] = self::pin_env(
 			$new['ai_envs'] ?? [],
 			$old['ai_envs'] ?? [],
-			self::ai_env_id()
+			self::required_ai_env_ids( $old )
 		);
 		$new['embeddings_envs'] = self::pin_env(
 			$new['embeddings_envs'] ?? [],
 			$old['embeddings_envs'] ?? [],
-			self::embeddings_env_id()
+			[ self::embeddings_env_id() ]
 		);
 
 		return self::pin_embeddings_defaults( $new, $old );
 	}
 
 	/**
-	 * Keep one required environment present in an env list, and stop a save from
+	 * Every `ai_envs` id this install cannot lose.
+	 *
+	 * The Anthropic env answers, but the OpenAI env is load-bearing too: it embeds
+	 * the visitor's question before the Pinecone lookup. Losing it leaves the bot
+	 * answering with no knowledge base — a quieter and worse failure than silence.
+	 * It is discovered rather than hardcoded: whatever `ai_embeddings_default_env`
+	 * points at, plus whatever the pinned Pinecone env names in `openai_env_id`.
+	 *
+	 * @param array $old The option value currently in the database.
+	 * @return string[]
+	 */
+	private static function required_ai_env_ids( array $old ): array {
+		$ids = [ self::ai_env_id() ];
+
+		$default_env = (string) ( $old['ai_embeddings_default_env'] ?? '' );
+		if ( '' !== $default_env ) {
+			$ids[] = $default_env;
+		}
+
+		foreach ( (array) ( $old['embeddings_envs'] ?? [] ) as $env ) {
+			if ( is_array( $env ) && ! empty( $env['openai_env_id'] ) ) {
+				$ids[] = (string) $env['openai_env_id'];
+			}
+		}
+
+		return array_values( array_unique( array_filter( $ids ) ) );
+	}
+
+	/**
+	 * Keep the required environments present in an env list, and stop a save from
 	 * blanking the API keys of the envs that did survive.
 	 *
-	 * @param mixed  $new_list    The env list being saved.
-	 * @param mixed  $old_list    The env list currently in the database.
-	 * @param string $required_id Env id that must not disappear.
+	 * @param mixed    $new_list     The env list being saved.
+	 * @param mixed    $old_list     The env list currently in the database.
+	 * @param string[] $required_ids Env ids that must not disappear.
 	 * @return array
 	 */
-	private static function pin_env( $new_list, $old_list, string $required_id ): array {
+	private static function pin_env( $new_list, $old_list, array $required_ids ): array {
 		$new_list = is_array( $new_list ) ? array_values( $new_list ) : [];
 		$old_list = is_array( $old_list ) ? array_values( $old_list ) : [];
 
@@ -126,7 +155,7 @@ final class AiEngineGuard {
 			}
 		}
 
-		$found = false;
+		$present = [];
 		foreach ( $new_list as $i => $env ) {
 			if ( ! is_array( $env ) || empty( $env['id'] ) ) {
 				continue;
@@ -137,13 +166,14 @@ final class AiEngineGuard {
 			if ( empty( $env['apikey'] ) && ! empty( $old_by_id[ $id ]['apikey'] ) ) {
 				$new_list[ $i ]['apikey'] = $old_by_id[ $id ]['apikey'];
 			}
-			if ( $id === $required_id ) {
-				$found = true;
-			}
+			$present[ $id ] = true;
 		}
 
-		if ( ! $found && isset( $old_by_id[ $required_id ] ) ) {
-			$new_list[] = $old_by_id[ $required_id ];
+		foreach ( $required_ids as $required_id ) {
+			if ( empty( $present[ $required_id ] ) && isset( $old_by_id[ $required_id ] ) ) {
+				$new_list[]                = $old_by_id[ $required_id ];
+				$present[ $required_id ]   = true;
+			}
 		}
 
 		return $new_list;
