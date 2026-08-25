@@ -3,7 +3,7 @@
  * Plugin Name: Insight - Trupharm - Chatbot
  * Plugin URI: https://github.com/udiinsight/insight-trupharm-chatbot
  * Description: Hebrew RTL AI support chatbot for SUGAR360 (Tropharm) — document-grounded answers via AI Engine Pro + Pinecone, with a custom React widget, lead routing, and medical safeguards.
- * Version: 1.0.10
+ * Version: 1.0.11
  * Author: Insight Marketing
  * Author URI: https://insight-marketing.co.il
  * Text Domain: insight-trupharm-chatbot
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'INSIGHT_TRUPHARM_CHATBOT_VERSION', '1.0.10' );
+define( 'INSIGHT_TRUPHARM_CHATBOT_VERSION', '1.0.11' );
 
 // Internal constants reused by the bundled modules (carried over from the shared Insight Chat codebase).
 define( 'INSIGHT_CHAT_VERSION', INSIGHT_TRUPHARM_CHATBOT_VERSION );
@@ -58,6 +58,7 @@ register_deactivation_hook(
 	__FILE__,
 	static function () {
 		wp_clear_scheduled_hook( \InsightChat\QueryLog::CRON_HOOK );
+		wp_clear_scheduled_hook( \InsightChat\AiEngineGuard::CRON_HOOK );
 	}
 );
 
@@ -71,6 +72,7 @@ add_action(
 		// so this idempotent check covers schema changes shipped in an update.
 		\InsightChat\Installer::maybe_upgrade();
 
+		\InsightChat\AiEngineGuard::register();
 		\InsightChat\ContextEnricher::register();
 		\InsightChat\QueryLog::register();
 		\InsightChat\RateLimiter::register();
